@@ -1,6 +1,6 @@
 # ConvertIt
 
-![ConvertIt Logo](https://via.placeholder.com/150) <!-- Replace with your logo if available -->
+![ConvertIt Logo](https://raw.githubusercontent.com/naveenkumar-devtech/ConvertIt/refs/heads/main/ConvertIt/static/favicon.png) <!-- Replace with your logo if available -->
 
 ConvertIt is a versatile, user-friendly web-based tool designed to facilitate accurate unit conversions across a wide array of categories. Whether you're a professional, student, researcher, or casual user, ConvertIt empowers you to perform conversion tasks seamlessly and efficiently.
 
