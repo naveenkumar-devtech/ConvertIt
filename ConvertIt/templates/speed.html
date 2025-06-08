@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% load static %}
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link rel="stylesheet" as="style" onload="this.rel='stylesheet'"
+        href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900" />
+    <title>Speed Converter</title>
+    <link rel="icon" type="image/png" href="{% static 'favicon.png' %}" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+</head>
+
+<body>
+    <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden"
+        style='--select-button-svg: url(&apos;data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724px%27 height=%2724px%27 fill=%27rgb(96,113,138)%27 viewBox=%270 0 256 256%27%3e%3cpath d=%27M181.66,170.34a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-48-48a8,8,0,0,1,11.32-11.32L128,212.69l42.34-42.35A8,8,0,0,1,181.66,170.34Zm-96-84.68L128,43.31l42.34,42.35a8,8,0,0,0,11.32-11.32l-48-48a8,8,0,0,0-11.32,0l-48,48A8,8,0,0,0,85.66,85.66Z%27%3e%3c/path%3e%3c/svg%3e&apos;); font-family: "Work Sans", "Noto Sans", sans-serif;'>
+
+        <div class="layout-container flex h-full grow flex-col">
+            
+            <header
+                class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f2f5] px-10 py-3">
+                <div class="flex items-center gap-4 text-[#111418]">
+                    <div class="size-4">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                    <h2 class="text-[#111418] text-lg font-bold leading-tight tracking-[-0.015em]">ConvertIt</h2>
+                </div>
+                <div class="flex flex-1 justify-end gap-8">
+                    <div class="flex items-center gap-9">
+                        <a class="text-[#111418] text-sm font-medium leading-normal"
+                            href="{% url 'home' %}">Home</a>
+                        <a class="text-[#111418] text-sm font-medium leading-normal"
+                            href="{% url 'length_converter' %}">Length</a>
+                        <a class="text-[#111418] text-sm font-medium leading-normal"
+                            href="{% url 'temperature_converter' %}">Temperature</a>
+                        <a class="text-[#111418] text-sm font-medium leading-normal"
+                            href="{% url 'weight_converter' %}">Weight</a>
+                        <a class="text-[#111418] text-sm font-medium leading-normal"
+                            href="{% url 'speed_converter' %}">Speed</a>
+                        <a class="text-[#111418] text-sm font-medium leading-normal" href="{% url 'about' %}">About</a>
+                        <a class="text-[#111418] text-sm font-medium leading-normal" href="{% url 'documentation' %}">Documentation</a>
+                    </div>
+                </div>
+            </header>
+
+            <form method="POST" action="{% url 'speed_converter' %}" class="px-40 py-10">
+                {% csrf_token %}
+                <div class="max-w-[480px]">
+                    
+                    <p class="text-2xl font-bold pb-1">Speed Converter</p>
+
+                    <p class="text-[#60718a] text-sm font-normal leading-normal">
+                        "Speed is irrelevant if you're going in the wrong direction."
+                    </p>
+
+                    <div class="py-3">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">From Unit</label>
+                        <select name="from_unit" class="form-input w-full rounded-xl border border-[#dbdfe6] h-14 p-3">
+                            <option value="m/s">m/s</option>
+                            <option value="km/h">km/h</option>
+                            <option value="mph">mph</option>
+                            <option value="knot">knot</option>
+                        </select>
+                    </div>
+                    
+                    <div class="py-2">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">To Unit</label>
+                        <select name="to_unit" class="form-input w-full rounded-xl border border-[#dbdfe6] h-14 p-3">
+                            <option value="m/s">m/s</option>
+                            <option value="km/h">km/h</option>
+                            <option value="mph">mph</option>
+                            <option value="knot">knot</option>
+                        </select>
+                    </div>
+                    
+
+                    <div class="py-2">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Value</label>
+                        <input type="number" step="any" name="value" placeholder="Enter value" required
+                            class="form-input w-full rounded-xl border border-[#dbdfe6] h-14 p-3" />
+                    </div>
+
+                    <div class="flex justify-end py-3">
+                        <button type="submit"
+                            class="bg-[#0d64e7] text-white font-bold px-6 py-2 rounded-full hover:bg-[#0b56c4]">
+                            Convert
+                        </button>
+                    </div>
+
+                    {% if result is not None %}
+                    <div class="mt-4 text-lg font-semibold text-gray-800">
+                        Result: {{ result }} {{ to_unit }}
+                    </div>
+                    {% endif %}
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>ConvertIt</title>
+    <link rel="icon" type="image/png" href="{% static 'favicon.png' %}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link rel="stylesheet" as="style" onload="this.rel='stylesheet'"
+        href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- Font Awesome (for icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Work Sans", "Noto Sans", sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .section {
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-project p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            /* 2 columns */
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background-color: #ffffff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .connect-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .connect-card {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 2px 15px rgba(255, 255, 255, 0.1);
+        }
+
+        .connect-card i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .connect-card h3 {
+            margin-top: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .btn,
+        .btn-outline {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn {
+            background-color: #ffd700;
+            color: black;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: #ffd700;
+            border: 2px solid #ffd700;
+        }
+
+        .btn:hover,
+        .btn-outline:hover {
+            background-color: #fff200;
+            color: black;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+                /* 1 column on smaller screens */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <!-- Header -->
+            <header
+                class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f2f5] px-10 py-3">
+                <div class="flex items-center gap-4 text-[#111418]">
+                    <div class="size-4">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                    <h2 class="text-[#111418] text-lg font-bold leading-tight tracking-[-0.015em]">ConvertIt</h2>
+                </div>
+                <div class="flex flex-1 justify-end gap-8">
+                    <div class="flex items-center gap-9">
+                        <a class="text-[#111418] text-sm font-medium leading-normal" href="{% url 'home' %}">Home</a>
+                        <a class="text-[#111418] text-sm font-medium leading-normal"
+                            href="{% url 'length_converter' %}">Length</a>
+                        <a class="text-[#111418] text-sm font-medium leading-normal"
+                            href="{% url 'temperature_converter' %}">Temperature</a>
+                        <a class="text-[#111418] text-sm font-medium leading-normal"
+                            href="{% url 'weight_converter' %}">Weight</a>
+                        <a class="text-[#111418] text-sm font-medium leading-normal"
+                            href="{% url 'speed_converter' %}">Speed</a>
+                        <a class="text-[#111418] text-sm font-medium leading-normal" href="{% url 'about' %}">About</a>
+                        <a class="text-[#111418] text-sm font-medium leading-normal" href="{% url 'documentation' %}">Documentation</a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- About Section -->
+            <section class="section">
+                <div class="container">
+                    <h2 class="section-title" style='font-family: "Work Sans", "Noto Sans", sans-serif;'><b>About ConvertIt</b>
+                    </h2>
+                    <div class="about-project">
+                        <p>
+                            ConvertIt isn’t just a tool; it’s your gateway to a world of effortless conversions, where complex calculations
+                            become simple and accessible.
+                            Picture this: you're traveling and need to convert kilometers to miles, or you're cooking and want to switch from
+                            grams to ounces.
+                            With ConvertIt, all of that is possible with a single click. Whether you’re converting temperature scales from
+                            Celsius to Fahrenheit,
+                            adjusting weights from pounds to kilograms, or recalculating speed from meters per second to miles per hour —
+                            ConvertIt’s clean,
+                            user-friendly interface makes each task feel like a breeze.
+                        </p>
+                        
+                        <p>
+                            What makes ConvertIt stand out is its perfect blend of precision and simplicity. Every conversion is lightning-fast,
+                            powered by well-crafted logic
+                            that ensures you always get accurate results. There's no need to memorize complex formulas or deal with cluttered
+                            interfaces — just clear,
+                            reliable answers at your fingertips. Whether you're a student, a traveler, a professional, or simply someone who
+                            needs quick conversions,
+                            ConvertIt is here to help.
+                        </p>
+                        
+                        <p>
+                            As the sole developer, I’ve carefully designed ConvertIt to be simple, useful, and fast. While the app is optimized
+                            for most screen sizes,
+                            I’m actively working on improving its responsiveness for smaller devices to make your experience even better —
+                            whether you’re using it on a desktop,
+                            tablet, or phone.
+                        </p>
+                        
+
+                        <p>The application currently supports conversions in:</p>
+
+                        <div class="features-grid">
+                            <div class="feature-card">
+                                <h3>Length</h3>
+                                <p>Convert between meters, kilometers, miles, feet, inches, and more.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h3>Weight</h3>
+                                <p>Convert between kilograms, grams, pounds, ounces, and other weight units.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h3>Temperature</h3>
+                                <p>Convert between Celsius, Fahrenheit, and Kelvin scales.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h3>Speed</h3>
+                                <p>Convert between kilometers per hour, miles per hour, meters per second, and knots.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Connect Section -->
+            <section class="section" style="background-color: #000000; color: white;">
+                <div class="container">
+                    <h2 class="section-title">Connect With Me</h2>
+                    <div class="connect-cards">
+                        <div class="connect-card">
+                            <i class="fab fa-github"></i>
+                            <h3>GitHub</h3>
+                            <p>Explore the ConvertIt repository on GitHub to see how it works, follow updates, or learn from the codebase.</p>
+
+
+                            <a href="https://github.com/yourusername/convertit" class="btn btn-outline" target="_blank">Visit
+                                GitHub</a>
+                        </div>
+                        <div class="connect-card">
+                            <i class="fab fa-linkedin"></i>
+                            <h3>LinkedIn</h3>
+                            <p>Connect with me on LinkedIn to stay updated, exchange ideas, or discover more of what I’m working on.</p>
+
+
+                            <a href="https://www.linkedin.com/in/naveen-kumar-684a19305/" class="btn btn-outline" target="_blank">Visit
+                                LinkedIn</a>
+                        </div>
+                        <div class="connect-card">
+                            <i class="fas fa-envelope"></i>
+                            <h3>Email</h3>
+                            <p>For inquiries, feedback, or collaboration opportunities, feel free to get in touch directly.</p>
+
+                            <a href="mailto:naveentyut@gmail.com" class="btn btn-outline">Send Email</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+    <footer
+        style="background-color: #ffffff; color: #000000; padding: 2rem 0; text-align: center; border-top: 1px solid #ddd;">
+        <div class="container">
+            <p style="margin: 0; font-size: 1rem;">&copy; 2025 ConvertIt. All rights reserved.</p>
+            <p style="margin: 0.5rem 0 0; font-size: 0.95rem; color: #333333;">
+                Crafted with ❤️ for learners and everyday users around the world.
+            </p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #666666;">
+                Note: This project is currently closed to external contributions.
+            </p>
+        </div>
+    </footer>
+    
+    
+</body>
+
+</html>

@@ -1,0 +1,324 @@
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link rel="stylesheet" as="style" onload="this.rel='stylesheet'"
+        href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900" />
+    <title>ConvertIt Documentation</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+</head>
+
+<body>
+    <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden"
+        style='font-family: "Work Sans", "Noto Sans", sans-serif;'>
+        <div class="layout-container flex h-full grow flex-col">
+            <header
+                class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f1f2f3] px-10 py-3">
+                <div class="flex items-center gap-4 text-[#131416]">
+                    <div class="size-4">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                    <h2 class="text-[#131416] text-lg font-bold leading-tight tracking-[-0.015em]">ConvertIt</h2>
+                </div>
+                <div class="flex flex-1 justify-end gap-8">
+                    <div class="flex items-center gap-9">
+                        <a class="text-[#111418] text-sm font-medium leading-normal" href="{% url 'home' %}">Home</a>
+                        <a class="text-[#111418] text-sm font-medium leading-normal" href="{% url 'length_converter' %}">Length</a>
+                        <a class="text-[#111418] text-sm font-medium leading-normal" href="{% url 'temperature_converter' %}">Temperature</a>
+                        <a class="text-[#111418] text-sm font-medium leading-normal" href="{% url 'weight_converter' %}">Weight</a>
+                        <a class="text-[#111418] text-sm font-medium leading-normal" href="{% url 'speed_converter' %}">Speed</a>
+                        <a class="text-[#111418] text-sm font-medium leading-normal" href="{% url 'about' %}">About</a>
+                        <a class="text-[#111418] text-sm font-medium leading-normal" href="{% url 'documentation' %}">Documentation</a>
+                    </div>
+                </div>
+            </header>
+            <div class="px-40 flex flex-1 justify-center py-5">
+                <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+                    <!-- Title Section -->
+                    <div class="flex flex-wrap justify-between gap-3 p-4">
+                        <div class="flex min-w-72 flex-col gap-3">
+                            <p class="text-[#131416] tracking-light text-[32px] font-bold leading-tight">ConvertIt
+                                Documentation</p>
+                            <p class="text-[#6b7380] text-sm font-normal leading-normal">
+                                Comprehensive Guide & Reference Manual
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Table of Contents -->
+                    <h3 class="text-[#131416] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Table
+                        of Contents</h3>
+                    <ul class="list-decimal pl-12 text-[#131416] text-base font-normal leading-normal pb-3">
+                        <li><a href="#introduction">Introduction</a></li>
+                        <li><a href="#project-objective">Project Objective</a></li>
+                        <li><a href="#key-features">Key Features</a></li>
+                        <li><a href="#technical-overview">Technical Overview</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#architecture">Architecture & Technology Stack</a></li>
+                        <li><a href="#usage-instructions">Usage Instructions</a></li>
+                        <li><a href="#examples">Examples</a></li>
+                        <li><a href="#benefits">Benefits & Advantages</a></li>
+                        <li><a href="#faqs">Frequently Asked Questions</a></li>
+                        <li><a href="#roadmap">Roadmap & Future Enhancements</a></li>
+                        <li><a href="#limitations">Known Limitations</a></li>
+                        <li><a href="#contact">Contact Information</a></li>
+                    </ul>
+
+                    <!-- Introduction -->
+                    <h3 id="introduction"
+                        class="text-[#131416] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">
+                        Introduction</h3>
+                    <p class="text-[#131416] text-base font-normal leading-normal pb-3 pt-1 px-4">
+                        In today's fast-paced digital landscape, the need for precise and rapid unit conversions spans
+                        across various domains, including academia, engineering, finance, healthcare, and everyday life.
+                        ConvertIt is a sophisticated, user-friendly web-based tool designed to facilitate accurate unit
+                        conversions across a wide array of categories. Engineered with simplicity and efficiency in
+                        mind, ConvertIt eliminates the complexities of manual calculations and mitigates the risks of
+                        conversion errors.
+                    </p>
+                    <p class="text-[#131416] text-base font-normal leading-normal pb-3 pt-1 px-4">
+                        Featuring an intuitive interface and a responsive design, ConvertIt caters to professionals,
+                        students, researchers, and casual users alike. Whether you are converting kilometers to miles
+                        for travel planning, Celsius to Fahrenheit for weather analysis, or kilograms to pounds for
+                        fitness tracking, ConvertIt empowers you to perform these tasks seamlessly and efficiently.
+                    </p>
+
+                    <!-- Project Objective -->
+                    <h3 id="project-objective"
+                        class="text-[#131416] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">
+                        Project Objective</h3>
+                    <p class="text-[#131416] text-base font-normal leading-normal pb-3 pt-1 px-4">
+                        The primary objective of ConvertIt is to develop a centralized, accessible, and continually
+                        evolving unit conversion platform that adheres to the following principles:
+                    </p>
+                    <ul class="list-disc pl-12 text-[#131416] text-base font-normal leading-normal pb-3">
+                        <li><b>Accuracy and Reliability:</b> Ensuring precise and dependable conversion results by
+                            utilizing well-established conversion factors and formulas.</li>
+                        <li><b>Speed and Efficiency:</b> Providing real-time results with minimal latency, thanks to
+                            client-side processing and optimized algorithms.</li>
+                        <li><b>User-Friendly Design:</b> Offering a visually clean and intuitive interface suitable for
+                            all user types, from novices to experienced professionals.</li>
+                        <li><b>Expandability:</b> Supporting a growing set of unit categories and measurement standards,
+                            with a modular architecture that facilitates easy integration of new features.</li>
+                        <li><b>Cross-Platform Compatibility:</b> Functioning seamlessly across all modern devices and
+                            browsers, ensuring a consistent user experience.</li>
+                        <li><b>Scalable Architecture:</b> Built on a robust framework to accommodate future enhancements
+                            and integrations, with a focus on maintainability and extensibility.</li>
+                    </ul>
+
+                    <!-- Key Features -->
+                    <h3 id="key-features"
+                        class="text-[#131416] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Key
+                        Features</h3>
+                    <ul class="list-disc pl-12 text-[#131416] text-base font-normal leading-normal pb-3">
+                        <li><b>Comprehensive Unit Support:</b> Including Length, Weight, Temperature, Volume, Area,
+                            Speed, Time, Pressure, Energy, Digital Storage, and more, with plans for continuous
+                            expansion.</li>
+                        <li><b>Real-Time Conversions:</b> Instant results as you type, enhancing user productivity and
+                            providing a seamless conversion experience.</li>
+                        <li><b>Responsive User Interface:</b> Optimized for both mobile and desktop devices, ensuring a
+                            consistent and intuitive user experience across all platforms.</li>
+                        <li><b>Accessibility-First Design:</b> Intuitive navigation and user-friendly features for
+                            enhanced accessibility, catering to users with diverse needs and preferences.</li>
+                        <li><b>Global Measurement Standards:</b> Support for both metric and imperial systems, along
+                            with other international measurement standards, ensuring versatility and adaptability.</li>
+                        <li><b>Expandable Framework:</b> Easy integration of new categories and units to meet evolving
+                            user needs, with a modular architecture that facilitates future-proofing and scalability.
+                        </li>
+                        <li><b>Cross-Platform Compatibility:</b> Zero-installation required, compatible with all modern
+                            browsers, ensuring a hassle-free user experience.</li>
+                    </ul>
+
+                    <!-- Technical Overview -->
+                    <h3 id="technical-overview"
+                        class="text-[#131416] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">
+                        Technical Overview</h3>
+                    <p class="text-[#131416] text-base font-normal leading-normal pb-3 pt-1 px-4">
+                        ConvertIt is built using Django, a high-level Python web framework that encourages rapid
+                        development and clean, pragmatic design. The backend logic is implemented in Python, utilizing
+                        Django's robust set of features and tools to ensure a scalable and maintainable architecture.
+                    </p>
+                    <p class="text-[#131416] text-base font-normal leading-normal pb-3 pt-1 px-4">
+                        The frontend is developed using HTML5, CSS3, and TailwindCSS, providing a modern and responsive
+                        user interface. Vanilla JavaScript is used to handle client-side interactions and ensure a
+                        seamless user experience.
+                    </p>
+
+                    <!-- How It Works -->
+                    <h3 id="how-it-works"
+                        class="text-[#131416] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">How It
+                        Works</h3>
+                    <p class="text-[#131416] text-base font-normal leading-normal pb-3 pt-1 px-4">
+                        ConvertIt simplifies the unit conversion process through a straightforward and efficient
+                        workflow. Users begin by selecting a conversion category (e.g., Length, Weight, Temperature) and
+                        specifying the source unit and the target unit. Upon entering the numerical value to convert in
+                        the designated input box, ConvertIt applies the appropriate conversion formula from its
+                        comprehensive internal database and displays the result in real time.
+                    </p>
+                    <p class="text-[#131416] text-base font-normal leading-normal pb-3 pt-1 px-4">
+                        The tool features a bi-directional conversion toggle, allowing users to instantly reverse the
+                        source and target units for added convenience. All calculations are performed client-side,
+                        ensuring maximum speed and efficiency without the need for server-side processing.
+                    </p>
+                    <p class="text-[#131416] text-base font-normal leading-normal pb-3 pt-1 px-4">
+                        For example, in the length conversion module, the input value is first converted to meters using
+                        a predefined conversion factor. It is then converted to the target unit using another conversion
+                        factor, ensuring accurate and reliable results.
+                    </p>
+
+                    <!-- Architecture & Technology Stack -->
+                    <h3 id="architecture"
+                        class="text-[#131416] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">
+                        Architecture & Technology Stack</h3>
+                    <ul class="list-disc pl-12 text-[#131416] text-base font-normal leading-normal pb-3">
+                        <li><b>Frontend:</b> Developed using HTML5, CSS3, TailwindCSS, and Vanilla JavaScript to ensure
+                            a modern and responsive user interface, optimized for both mobile and desktop devices.</li>
+                        <li><b>Backend:</b> Built using Django, a high-level Python web framework that provides a robust
+                            set of features and tools for rapid development and clean, pragmatic design. The backend
+                            logic is implemented in Python, ensuring a scalable and maintainable architecture.</li>
+                        <li><b>Deployment:</b> Compatible with standard web hosting platforms, including GitHub Pages,
+                            Netlify, Vercel, and personal websites, ensuring easy deployment and accessibility.</li>
+                        <li><b>Scalability:</b> Built with a modular design to facilitate easy expansion of categories
+                            and units, ensuring future-proofing and adaptability to meet evolving user needs.</li>
+                    </ul>
+
+                    <!-- Usage Instructions -->
+                    <h3 id="usage-instructions"
+                        class="text-[#131416] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Usage
+                        Instructions</h3>
+                    <ol class="list-decimal pl-12 text-[#131416] text-base font-normal leading-normal pb-3">
+                        <li>Launch ConvertIt via your preferred web browser by navigating to the application's URL.</li>
+                        <li>Select the desired conversion category from the dropdown menu, such as Length, Weight, or
+                            Temperature.</li>
+                        <li>Choose the source unit and the target unit for the conversion from the provided options.
+                        </li>
+                        <li>Enter the numerical value to convert in the input box, ensuring that it is a valid and
+                            non-negative number.</li>
+                        <li>View the result instantly as the output updates in real time, providing an accurate and
+                            reliable conversion.</li>
+                        <li>Utilize the reverse toggle to swap the source and target units if necessary, allowing for
+                            bi-directional conversions and added convenience.</li>
+                    </ol>
+
+                    <!-- Examples -->
+                    <h3 id="examples"
+                        class="text-[#131416] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">
+                        Examples</h3>
+                    <p class="text-[#131416] text-base font-normal leading-normal pb-3 pt-1 px-4">
+                        Here are some examples of how to use ConvertIt for various unit conversions:
+                    </p>
+                    <ul class="list-disc pl-12 text-[#131416] text-base font-normal leading-normal pb-3">
+                        <li><b>Length Conversion:</b> Convert 5 kilometers to miles. Enter "5" in the input box, select
+                            "Kilometers" as the source unit, and "Miles" as the target unit. The result will be
+                            displayed instantly.</li>
+                        <li><b>Temperature Conversion:</b> Convert 25 degrees Celsius to Fahrenheit. Enter "25" in the
+                            input box, select "Celsius" as the source unit, and "Fahrenheit" as the target unit. The
+                            result will be displayed instantly.</li>
+                        <li><b>Weight Conversion:</b> Convert 10 kilograms to pounds. Enter "10" in the input box,
+                            select "Kilograms" as the source unit, and "Pounds" as the target unit. The result will be
+                            displayed instantly.</li>
+                    </ul>
+
+                    <!-- Benefits & Advantages -->
+                    <h3 id="benefits"
+                        class="text-[#131416] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">
+                        Benefits & Advantages</h3>
+                    <ul class="list-disc pl-12 text-[#131416] text-base font-normal leading-normal pb-3">
+                        <li>Completely free and open for public use, with no hidden charges or subscription fees,
+                            ensuring accessibility and affordability for all users.</li>
+                        <li>Ad-free experience, providing an uninterrupted and seamless user interface, free from
+                            distractions and intrusive elements.</li>
+                        <li>No user registration or login required, offering instant access to all features and ensuring
+                            a hassle-free user experience.</li>
+                        <li>Highly intuitive and beginner-friendly interface, designed for users of all skill levels,
+                            from novices to experienced professionals.</li>
+                        <li>Responsive and mobile-optimized design, ensuring a consistent and intuitive user experience
+                            across all devices and platforms.</li>
+                        <li>Instant calculation results, with no delays or page reloads, enhancing user productivity and
+                            providing a seamless conversion experience.</li>
+                        <li>Expanding library of units and categories, continuously updated to meet evolving user needs
+                            and ensure versatility and adaptability.</li>
+                        <li>Easy integration into third-party websites with minimal effort, enhancing versatility and
+                            usability, and providing added value for developers and users alike.</li>
+                    </ul>
+
+                    <!-- FAQs -->
+                    <h3 id="faqs"
+                        class="text-[#131416] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">
+                        Frequently Asked Questions</h3>
+                    <p class="text-[#131416] text-base font-normal leading-normal pb-3 pt-1 px-4"><b>How accurate is
+                            ConvertIt?</b><br>
+                        ConvertIt utilizes industry-standard conversion formulas and authoritative data sources to
+                        ensure maximum accuracy across all supported categories. Our commitment to precision and
+                        reliability ensures that users can trust the results provided by our tool, with a focus on
+                        maintaining the highest standards of accuracy and dependability.
+                    </p>
+                    <p class="text-[#131416] text-base font-normal leading-normal pb-3 pt-1 px-4"><b>Does ConvertIt work
+                            offline?</b><br>
+                        As of the current version, ConvertIt requires an active internet connection to function,
+                        ensuring access to the latest features and updates. However, we are actively exploring the
+                        possibility of developing an offline-capable version to enhance accessibility and convenience
+                        for our users, with a focus on providing a seamless and uninterrupted user experience.
+                    </p>
+                    <p class="text-[#131416] text-base font-normal leading-normal pb-3 pt-1 px-4"><b>How can I suggest
+                            new features or units for ConvertIt?</b><br>
+                        We highly value user feedback and are always open to suggestions for new features or units.
+                        Please feel free to reach out to us via the contact email provided below with your ideas and
+                        recommendations. Your input plays a crucial role in shaping the future of ConvertIt, and we are
+                        committed to providing a tool that meets the evolving needs and preferences of our users.
+                    </p>
+
+                    <!-- Roadmap & Future Enhancements -->
+                    <h3 id="roadmap"
+                        class="text-[#131416] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">
+                        Roadmap & Future Enhancements</h3>
+                    <ul class="list-disc pl-12 text-[#131416] text-base font-normal leading-normal pb-3">
+                        <li><b>Offline Functionality:</b> Implementation of service workers to enable offline usage and
+                            enhance accessibility, providing a seamless and uninterrupted user experience.</li>
+                        <li><b>Financial and Currency Conversions:</b> Expanded support for financial calculations and
+                            live currency exchange rates, ensuring versatility and adaptability to meet evolving user
+                            needs.</li>
+                        <li><b>Dark Mode Toggle:</b> Introduction of a dark mode option for improved accessibility and
+                            user comfort, catering to users with diverse needs and preferences.</li>
+                        <li><b>User Preferences:</b> Customization options for user preferences and saved conversions,
+                            enhancing personalization and providing a tailored user experience.</li>
+                        <li><b>Localization:</b> Multi-language support to cater to a global audience and enhance user
+                            experience, ensuring accessibility and usability for users worldwide.</li>
+                        <li><b>Advanced API:</b> Development of an advanced API for seamless third-party integrations
+                            and enhanced functionality, providing added value for developers and users alike.</li>
+                    </ul>
+
+                    <!-- Known Limitations -->
+                    <h3 id="limitations"
+                        class="text-[#131416] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Known
+                        Limitations</h3>
+                    <ul class="list-disc pl-12 text-[#131416] text-base font-normal leading-normal pb-3">
+                        <li>Currently, ConvertIt requires an online connection to function, limiting accessibility in
+                            offline environments and ensuring access to the latest features and updates.</li>
+                        <li>The tool does not yet include support for currency conversion or live exchange rates, which
+                            may be essential for financial applications and international users.</li>
+                        <li>Limited unit customization options are available in the current version, with plans for
+                            enhanced customization and personalization in future updates, catering to users with diverse
+                            needs and preferences.</li>
+                    </ul>
+
+                    <!-- Contact Information -->
+                    <h3 id="contact"
+                        class="text-[#131416] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">
+                        Contact Information</h3>
+                    <p class="text-[#131416] text-base font-normal leading-normal pb-3 pt-1 px-4">
+                        For any questions, feature requests, or contributions, please do not hesitate to contact us at
+                        <b>naveentyut@gmail.com</b>. We are committed to providing exceptional support and value your
+                        feedback as we continue to enhance and expand the capabilities of ConvertIt, ensuring a tool
+                        that meets the evolving needs and preferences of our users.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
